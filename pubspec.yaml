@@ -61,6 +61,15 @@ flutter:
       fonts:
         - asset: fonts/PlayfairDisplay-VariableFont_wght.ttf
         #- asset: fonts/PlayfairDisplay-Italics-VariableFont_wght.ttf
+    - family: LibreBaskervile_Bold
+      fonts:
+        - asset: fonts/LibreBaskerville-Bold.ttf
+    - family: LibreBaskervile_Italic
+      fonts:
+        - asset: fonts/LibreBaskerville-Italic.ttf
+    - family: LibreBaskervile_Regular
+      fonts:
+        - asset: fonts/LibreBaskerville-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
