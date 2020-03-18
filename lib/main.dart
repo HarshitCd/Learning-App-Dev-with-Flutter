@@ -15,16 +15,7 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[200],
       ),
       body: Center(
-        child: Text(
-          'This Is My First App',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2,
-            color: Colors.grey[600],
-            fontFamily: 'LibreBaskervile_Italic',
-          ),
-        ),
+        child: Image.asset('assets/2img.jpg')
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
