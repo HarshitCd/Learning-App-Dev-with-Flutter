@@ -4,7 +4,13 @@ void main() => runApp(MaterialApp(
   home: Id_Home(),
 ));
 
-class Id_Home extends StatelessWidget {
+class Id_Home extends StatefulWidget {
+  @override
+  _Id_HomeState createState() => _Id_HomeState();
+}
+
+class _Id_HomeState extends State<Id_Home> {
+  int age = 18;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +97,7 @@ class Id_Home extends StatelessWidget {
             ),
             SizedBox(height: 5),
             Text(
-              '18',
+              '$age',
               style: TextStyle(
                 fontSize: 25,
                 color: Colors.amber[700],
@@ -120,6 +126,14 @@ class Id_Home extends StatelessWidget {
           ],
         ),
       ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              age += 1;
+            });
+          },
+          child: Icon(Icons.add),
+        )
     );
   }
 }
