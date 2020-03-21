@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'quote_card.dart';
 
 void main() => runApp(MaterialApp(
   home: QuoteList(),
@@ -19,168 +20,22 @@ class _QuoteListState extends State<QuoteList> {
     Quote(author:'Haru Paru', text: 'Live life to it\'s fullest!')
   ];
   
-  Widget quoteTemplate(quote){
-    return Card(
-      color: Colors.grey[400],
-      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
-      child: Padding(
-        padding: EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              quote.text,
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.grey[600],
-              ),
-            ),
-            SizedBox(height: 6, width: 3,),
-            Text(
-              quote.author,
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey[700],
-              ),
-            ),
-            SizedBox(height: 6, width: 3,),
-          ],
-        ),
-      ),
-    );
-  }
-  
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         title: Text('Quotes'),
         centerTitle: true,
         backgroundColor: Colors.redAccent,
       ),
-<<<<<<< HEAD
-      body: Container(
-        padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Center(
-              child: CircleAvatar(
-                backgroundColor: Colors.grey[800],
-                child: Image.asset('assets/greninja.png'),
-                radius: 50,
-              ),
-            ),
-            Divider(
-              height: 60,
-              color: Colors.grey[850],
-            ),
-            Text(
-              'Name:',
-              style: TextStyle(
-                letterSpacing: 1,
-                fontSize: 20,
-                color: Colors.grey[700],
-              ),
-            ),
-            SizedBox(height: 5),
-            Text(
-              'Greninja',
-              style: TextStyle(
-                fontSize: 25,
-                color: Colors.amber[700],
-              ),
-            ),
-            SizedBox(height: 30),
-            Text(
-              'Class:',
-              style: TextStyle(
-                letterSpacing: 1,
-                fontSize: 20,
-                color: Colors.grey[700],
-              ),
-            ),
-            SizedBox(height: 5),
-            Text(
-              '4th Sem - A',
-              style: TextStyle(
-                fontSize: 25,
-                color: Colors.amber[700],
-              ),
-            ),
-            SizedBox(height: 30),
-            Text(
-              'Department:',
-              style: TextStyle(
-                letterSpacing: 1,
-                fontSize: 20,
-                color: Colors.grey[700],
-              ),
-            ),
-            SizedBox(height: 5),
-            Text(
-              'Information Science',
-              style: TextStyle(
-                fontSize: 25,
-                color: Colors.amber[700],
-              ),
-            ),
-            SizedBox(height: 30),
-            Text(
-              'Age:',
-              style: TextStyle(
-                letterSpacing: 1,
-                fontSize: 20,
-                color: Colors.grey[700],
-              ),
-            ),
-            SizedBox(height: 5),
-            Text(
-              '$age',
-              style: TextStyle(
-                fontSize: 25,
-                color: Colors.amber[700],
-              ),
-            ),
-            SizedBox(height: 30),
-            Row(
-              children: <Widget>[
-                Icon(
-                  Icons.mail,
-                  size: 30,
-                  color: Colors.grey[400],
-                ),
-                SizedBox(width: 10),
-                Text(
-                  'greninja.is18@bmsce.ac.in',
-                  style: TextStyle(
-                    letterSpacing: 1,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey[400],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              age += 1;
-            });
-          },
-          child: Icon(Icons.add),
-        )
-=======
+
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
+        children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
       ),
->>>>>>> 6b8a423... Lesson12 Lists
+
     );
   }
 }
+
 
