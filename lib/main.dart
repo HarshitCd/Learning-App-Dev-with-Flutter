@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
-void main() => runApp(MaterialApp(  
+void main() => runApp(MaterialApp(
   home: QuoteList(),
 ));
 
@@ -12,7 +13,11 @@ class QuoteList extends StatefulWidget {
 
 class _QuoteListState extends State<QuoteList> {
   @override
-  List<String> quotes = ['Do what you want!', 'Don\'t live for someone else\'s sake', 'Live life to it\'s fullest!' ];
+  List<Quote> quotes = [
+    Quote(author: 'Haru',text: 'Do what you want!'),
+    Quote(author: 'Harshit', text: 'Don\'t live for someone else\'s sake'),
+    Quote(author:'Haru Paru', text: 'Live life to it\'s fullest!')
+  ];
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[800],
@@ -138,7 +143,8 @@ class _QuoteListState extends State<QuoteList> {
         )
 =======
       body: Column(
-        children: quotes.map((quote) => Text(quote)).toList(),
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: quotes.map((quote) => Text('${quote.text} - ${quote.author}')).toList(),
       ),
 >>>>>>> 6b8a423... Lesson12 Lists
     );
