@@ -18,13 +18,46 @@ class _QuoteListState extends State<QuoteList> {
     Quote(author: 'Harshit', text: 'Don\'t live for someone else\'s sake'),
     Quote(author:'Haru Paru', text: 'Live life to it\'s fullest!')
   ];
+  
+  Widget quoteTemplate(quote){
+    return Card(
+      color: Colors.grey[400],
+      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
+      child: Padding(
+        padding: EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              quote.text,
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.grey[600],
+              ),
+            ),
+            SizedBox(height: 6, width: 3,),
+            Text(
+              quote.author,
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey[700],
+              ),
+            ),
+            SizedBox(height: 6, width: 3,),
+          ],
+        ),
+      ),
+    );
+  }
+  
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[800],
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text('Quotes'),
         centerTitle: true,
-        backgroundColor: Colors.grey[850],
+        backgroundColor: Colors.redAccent,
       ),
 <<<<<<< HEAD
       body: Container(
@@ -144,7 +177,7 @@ class _QuoteListState extends State<QuoteList> {
 =======
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: quotes.map((quote) => Text('${quote.text} - ${quote.author}')).toList(),
+        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
       ),
 >>>>>>> 6b8a423... Lesson12 Lists
     );
