@@ -1,25 +1,27 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-  home: Id_Home(),
+void main() => runApp(MaterialApp(  
+  home: QuoteList(),
 ));
 
-class Id_Home extends StatefulWidget {
+class QuoteList extends StatefulWidget {
   @override
-  _Id_HomeState createState() => _Id_HomeState();
+  _QuoteListState createState() => _QuoteListState();
 }
 
-class _Id_HomeState extends State<Id_Home> {
-  int age = 18;
+class _QuoteListState extends State<QuoteList> {
   @override
+  List<String> quotes = ['Do what you want!', 'Don\'t live for someone else\'s sake', 'Live life to it\'s fullest!' ];
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.grey[800],
       appBar: AppBar(
-        title: Text('ID Card'),
+        title: Text('Quotes'),
         centerTitle: true,
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.grey[850],
       ),
+<<<<<<< HEAD
       body: Container(
         padding: EdgeInsets.fromLTRB(10, 30, 10, 0),
         child: Column(
@@ -134,6 +136,12 @@ class _Id_HomeState extends State<Id_Home> {
           },
           child: Icon(Icons.add),
         )
+=======
+      body: Column(
+        children: quotes.map((quote) => Text(quote)).toList(),
+      ),
+>>>>>>> 6b8a423... Lesson12 Lists
     );
   }
 }
+
